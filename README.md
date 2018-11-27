@@ -24,12 +24,7 @@ This course is for Java developers who want to build Spring Boot applications. N
 ### Technical Requirements
 This course has the following software requirements:<br/>
 Software Requirements
-
-Code Editor: Spring Tool Suite for eclipse
-
-                    JDK 8
-
-                    Maven 3.5
+Code Editor: Spring Tool Suite for eclipse, JDK 8,   Maven 3.5
 
 ## Related Products
 * [Spring 5 in 7 Days [Video]](https://www.packtpub.com/application-development/spring-5-7-days-video?utm_source=github&utm_medium=repository&utm_campaign=9781789139839)
