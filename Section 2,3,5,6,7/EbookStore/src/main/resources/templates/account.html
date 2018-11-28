@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.js"></script>
+
+<title th:text="${name}" />
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+<script th:src="@{/JS/ebsmain.js}"></script>
+</head>
+<body ng-app="EBookStoreManagement" ng-controller="PersonController">
+	<th:block th:include="/header"></th:block>
+	<th:block th:include="/menu"></th:block>
+	<div class="page-title">EBookStore - Create new account</div>
+	<div>
+		<form class="form-container" action="" th:action="@{/person/new/}"
+			method="POST" th:object="${person}">
+			<table>
+				<tr>
+					<td><label>username</label></td>
+					<td><input type="text" th:field="*{username}" /></td>
+					<td th:if="${#fields.hasErrors('username')}"
+						th:errors="*{username}">Name Error</td>
+				</tr>
+				<tr>
+					<td><label>password</label></td>
+					<td><input type="password" th:field="*{password}" /></td>
+					<td th:if="${#fields.hasErrors('password')}"
+						th:errors="*{password}">Name Error</td>
+				</tr>
+				<tr>
+					<td><label>first name</label></td>
+					<td><input type="text" th:field="*{firstName}" /></td>
+					<td th:if="${#fields.hasErrors('firstName')}"
+						th:errors="*{firstName}">Name Error</td>
+				</tr>
+				<tr>
+					<td><label>last name</label></td>
+					<td><input type="text" th:field="*{lastName}" /></td>
+					<td th:if="${#fields.hasErrors('lastName')}"
+						th:errors="*{lastName}">Name Error</td>
+				</tr>
+				<tr>
+					<td><label>choose</label></td>
+					<td><select th:field="*{userRole}">
+							<option value="AUTHOR" th:text="author">
+							<option value="CUSTOMER" th:text="customer">
+					</select></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>
+
+						<button class="createnew" type="submit">create new
+							account</button>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	<th:block th:include="/footer"></th:block>
+
+</body>
+</html>

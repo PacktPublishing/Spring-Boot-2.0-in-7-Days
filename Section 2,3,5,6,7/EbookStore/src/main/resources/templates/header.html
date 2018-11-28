@@ -1,0 +1,22 @@
+<div class="header-container" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+	<div class="site-name">EBook Store</div>
+	<div class="header-search">
+		<form th:action="@{/books/search}" method="POST">
+			<input type="search" name="searchstring" />
+			<button class="searchBooks" type="submit">Search</button>
+		</form>
+	</div>
+	<div class="header-bar">
+		<div sec:authorize="isAuthenticated()">
+			Hello <a th:href="@{/accountInfo}"><span
+				sec:authentication="name">Bob</span> </a> &nbsp;|&nbsp; <a
+				th:href="@{/logout}">Logout</a>
+		</div>
+		<th:block sec:authorize="isAnonymous()">
+			<a th:href="@{/login}">Login</a>
+		</th:block>
+	</div>
+
+</div>

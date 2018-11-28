@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title th:text="${name}"></title>
+
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+</head>
+<body>
+	<th:block th:include="/header"></th:block>
+	<th:block th:include="/menu"></th:block>
+	<div class="page-title">Update Book</div>
+
+	<div>
+		<form class="form-container" action="" th:action="@{/books/update/}"
+			method="POST" th:object="${book}" enctype="multipart/form-data">
+			<table style="width: 100%">
+			<tr>
+				<td><label>title</label></td>
+				<td><input th:field="*{id}" type="hidden" /> <input
+					type="text" th:field="*{title}" /></td>
+				</tr>
+				<tr>
+					<td><label>price</label></td>
+					<td><input type="text" th:field="*{price}" /></td>
+				</tr>
+				<tr>
+					<td><label>publish date</label></td>
+					<td><input type="date" th:field="*{publishDate}" /></td>
+				</tr>
+				<tr>
+					<td><label>description</label></td>
+					<td><textarea th:field="*{description}"></textarea></td>
+				</tr>
+				<tr>
+
+					<td></td>
+					<td>
+						<button class="createnew" type="submit">update</button>
+					</td>
+				</tr>
+			</table>
+		</form>
+		</div>
+		<th:block th:include="/footer"></th:block>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<div class="menu-container" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+	<a th:href="@{/}">Home</a> | <a th:href="@{/books/list}">View my
+		books</a>
+	<th:block sec:authorize="hasAuthority('AUTHOR')">|
+   		<a th:href="@{/books/new}">create new book</a>
+	</th:block>
+	|
+	<th:block sec:authorize="isAuthenticated()">
+		<a th:href="@{/order/orderList}">Order List</a>
+   	|
+   </th:block>
+	<a th:href="@{/order/shoppingCart}">Shopping Cart</a>
+
+
+</div>

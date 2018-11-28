@@ -1,0 +1,109 @@
+html {
+    background: white;
+}
+h3 {
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    max-width: 860px;
+    min-width: 360px;
+    margin: 0px auto;
+    background: #EEEEFF;
+    padding:0px 5px;
+    text-align:center;
+}
+  
+.page-title  {
+    font-size:120%;
+    text-align: left;
+    margin:10px 0px;
+}
+.header-container {
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+    background: #1111FF;
+    color: white;
+   
+}
+.header-container .header-search{
+	position: absolute;
+	left: 220px;
+	bottom:20px;
+}
+.header-container .header-bar  {
+    position: absolute;
+    right: 10px;
+    bottom: 20px;
+}
+.header-container .header-bar  a  {
+    color: white;
+    font-size: bold;
+}
+  
+.footer-container {
+    text-align: center;
+    margin-top: 10px;
+    padding: 5px 0px 0px 0px;
+    border-top: 1px solid #ccc;
+}
+.menu-container {
+    text-align: right;
+    margin: 0px 0px;
+    background: #AAAAFF;
+    color: white;
+}
+.menu-container a {
+    margin: 5px 5px 5px 10px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+  
+.site-name {
+    font-size:200%;
+    margin:10px 10px 10px 0px;
+    padding: 5px;
+}
+
+ .login-container {
+    padding: 5px;
+    border: 1px solid #ccc;
+    text-align:left;
+    margin:20px 0px;
+}
+
+.form-container{
+	margin: 2px 2px 2px 2px;
+	text-align: left;
+}
+
+table td {
+    padding: 5px;
+}
+
+.createnew {
+	border-radius:4px;
+}
+
+.searchBooks {
+	border-radius: 8px;
+	
+}
+
+.counter {
+	border-radius: 5px;
+	background-image: linear-gradient( #e6f2ff,#99CCFF);	
+}
+
+.error-message {
+    font-size: 90%;
+    color: red;
+    font-style: italic;
+}
+
+.booktitle
+{
+	font-weight: bold;
+}

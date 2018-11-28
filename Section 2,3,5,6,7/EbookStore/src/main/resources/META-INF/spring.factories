@@ -1,0 +1,2 @@
+org.springframework.boot.actuate.autoconfigure.web.ManagementContextConfiguration = \
+com.ebookstore.app.CustomEndpointConfig

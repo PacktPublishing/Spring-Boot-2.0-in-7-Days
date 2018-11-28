@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title th:text="${name}" />
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+</head>
+<body>
+	<th:block th:include="/header"></th:block>
+	<th:block th:include="/menu"></th:block>
+	<div class="page-title">Customer page</div>
+	<th:block th:include="/footer"></th:block>
+
+</body>
+</html>

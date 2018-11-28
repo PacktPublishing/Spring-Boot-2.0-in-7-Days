@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="UTF-8">
+
+
+<title th:text="${name}" />
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+
+</head>
+<body>
+	<th:block th:include="/header"></th:block>
+	<th:block th:include="/menu"></th:block>
+	<div class="page-title">Booklist</div>
+	<div class="demo-container">
+		<table border="1" style="width: 100%">
+			<tr th:each="book : ${booklist}">
+				<td th:utext="${book.title}"></td>
+				<td th:utext="${book.publishDate}"></td>
+				<td th:utext="|${#numbers.formatDecimal(book.price,1,2,'COMMA')} &dollar;|"></td>
+				<td><a th:href="@{|/order/buyBook?id=${book.id}|}">Buy now</a></td>
+				<th:block sec:authorize="hasAuthority('AUTHOR')">
+					<td><a th:href="@{|/books/update?id=${book.id}|}">Edit
+							book</a></td>
+				</th:block>
+			</tr>
+		</table>
+	</div>
+
+	<th:block th:include="/footer"></th:block>
+
+</body>
+</html>

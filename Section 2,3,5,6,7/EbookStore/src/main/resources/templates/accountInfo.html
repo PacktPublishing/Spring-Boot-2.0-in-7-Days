@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="UTF-8">
+<title th:text="${name}"></title>
+
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+</head>
+<body>
+	<th:block th:include="/header"></th:block>
+	<th:block th:include="/menu"></th:block>
+	<div class="page-title">author page</div>
+	<h2 th:text="'Welcome ' + ${person.username}"></h2>
+	<h3>author details:</h3>
+	<ul>
+		<li>first name: <span th:utext="${person.firstName}"></span></li>
+		<li>last name: <span th:utext="${person.lastName}"></span></li>
+	</ul>
+
+	<th:block th:include="/footer"></th:block>
+
+</body>
+</html>

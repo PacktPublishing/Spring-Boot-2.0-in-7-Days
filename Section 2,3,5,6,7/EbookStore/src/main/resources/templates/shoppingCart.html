@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title th:text="${name}"></title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+</head>
+<body>
+	<th:block th:include="/header"></th:block>
+	<th:block th:include="/menu"></th:block>
+	<div class="page-title">
+Shopping cart
+	</div>
+	<div class="demo-container">
+
+		<th:block
+			th:if="${shoppingCart == null || shoppingCart.cartLines == null || shoppingCart.cartLines.empty}">
+			<h2>shopping cart is empty</h2>
+		</th:block>
+
+		<th:block
+			th:if="${shoppingCart != null && shoppingCart.cartLines!=null}">
+			<form method="POST" th:object="${shoppingCart}"
+				th:action="@{/shoppingCart}">
+				<table border="1" style="width: 100%">
+					<tr th:each="lineInfo, varStatus:${shoppingCart.cartLines}">
+						<td><span class="booktitle"
+							th:utext="${lineInfo.bookInfo.title}"></span> <br> by <span
+							th:utext="${lineInfo.bookInfo.author}"></span></td>
+						<td><span class="price"
+							th:utext="|${#numbers.formatDecimal(lineInfo.bookInfo.price,1,2,'COMMA') } &dollar;|">
+						</span> EUR</td>
+						<td><span th:utext="${lineInfo.quantity}"></span></td>
+						<td><span class="subtotal"
+							th:utext="|${#numbers.formatDecimal(lineInfo.sum,1,2,'COMMA')} &dollar;|">
+						</span> EUR</td>
+
+					</tr>
+				</table>
+				<a th:href="@{/order/shoppingCartCounter}">Proceed to checkout</a>
+
+			</form>
+			<!--   <form method="POST" th:object="${shoppingCart}" th:action="@{/shoppingCart}">
+         <div  th:each="lineInfo, varStatus : ${shoppingCart.cartLines}">
+         	<ul>
+         		
+         			 <li>Name: <span th:utext="${lineInfo.bookInfo.title}"></span></li>
+                     
+         	</ul>
+         </div>
+         </form>-->
+		</th:block>
+
+	</div>
+	<th:block th:include="/footer"></th:block>
+</body>
+</html>
