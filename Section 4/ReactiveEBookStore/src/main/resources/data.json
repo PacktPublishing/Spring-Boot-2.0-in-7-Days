@@ -1,0 +1,54 @@
+[
+	{
+		"_class":"com.simonis.reactive.Person",
+		"username":"testuser",
+		"password":"123",
+		"firstName":"Joey",
+		"lastName":"Rowling",
+		"id":"1", 
+		"books": [
+					{
+					"description":"a young boy finds out he's a wizard",
+					"id":"1",
+					"path":".",
+					"price":"1",
+					"publishDate":"1999-01-01",
+					"title":"Harry Porter"
+				},
+				{	"description":"a young girl writes a diary",
+					"id":"2",
+					"path":".",
+					"price":"1",
+					"publishDate":"1999-01-02",
+					"title":"Lucky Lotta"
+				}
+		],
+		"userRole":"AUTHOR"
+	},
+	{
+		"_class":"com.simonis.reactive.Person",
+		"username":"testuser2",
+		"password":"12345",
+		"firstName":"Dana",
+		"lastName":"Whitfield",
+		"id":"2",
+		"books": [
+					{
+					"description":"a brand new novel",
+					"id":"3",
+					"path":".",
+					"price":"1",
+					"publishDate":"1999-01-01",
+					"title":"Every single word"
+				},
+				{	"description":"a new romance",
+					"id":"4",
+					"path":".",
+					"price":"1",
+					"publishDate":"1999-01-03",
+					"title":"Happy world"
+				}
+		],
+		"userRole":"AUTHOR"
+	}
+]
